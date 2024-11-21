@@ -1,0 +1,142 @@
+import sys
+print("Bank Application")
+print("*"*50)
+print("Welcome to State Bank of India--Eluru Division")
+print("*"*50)
+name=input("Enter your name:")
+if name=="AR" or "BR" and "CR" and "DR":
+    print("Authorised person")
+else:
+    print("User not found----Try again")
+    sys.exit()
+print("*"*50)
+print("Available services")
+print("*"*20)
+print("1.Balance Enquiry")
+print("2.Withdraw Amount")
+print("3.Deposit Cash")
+print("*"*50)
+choice=int(input("Enter your choice:"))
+match choice:
+    case 1:
+            if name=="AR":
+                balance=int(5000)
+                print("Your account balance is {}".format(balance))
+            if name=="BR":
+                balance=int(10000)
+                print("Your account balance is {}".format(balance))
+            if name=="CR":
+                balance=int(100000)
+                print("Your account balance is {}".format(balance))
+            if name=="DR":
+                balance=int(20000)
+                print("Your account balance is {}".format(balance))
+    case 2:
+        try:
+            if name=="AR":
+                balance=int(5000)
+                print("Your balance is {}".format(balance))
+                withdraw=int(input("Enter withdraw amount:"))
+                print("*"*50)
+                if withdraw > balance:
+                    print("Insufficient Amount you enter---Try again later")
+                    sys.exit()
+                if withdraw<=0:
+                    print("Do not enter zero for withdraw--Try again later")
+                else:
+                    newbalance1 = balance-withdraw
+                    print("Your account is debited with INR {}".format(withdraw))
+                    print("Your current balance INR {}".format(newbalance1))
+            if name=="BR":
+                balance=int(10000)
+                print("Your balance is {}".format(balance))
+                withdraw=int(input("Enter withdraw amount:"))
+                print("*"*50)
+                if withdraw > balance:
+                    print("Insufficient Amount you enter---Try again later")
+                    sys.exit()
+                if withdraw<=0:
+                    print("Do not enter zero for withdraw--Try again later")
+                else:
+                    newbalance1 = balance-withdraw
+                    print("Your account is debited with INR {}".format(withdraw))
+                    print("Your current balance {}".format(newbalance1))
+            if name=="CR":
+                balance=int(100000)
+                print("Your balance is {}".format(balance))
+                withdraw=int(input("Enter withdraw amount:"))
+                print("*"*50)
+                if withdraw<=0:
+                    print("Do not enter zero for withdraw--Try again later")
+                    if withdraw>balance:
+                        print("Insufficient Amount you enter---Try again later")
+                else:
+                    newbalance1 = balance-withdraw
+                    print("Your account is debited with INR {}".format(withdraw))
+                    print("Your current balance {}".format(newbalance1))
+            if name=="DR":
+                balance=int(20000)
+                print("Your balance is {}".format(balance))
+                withdraw=int(input("Enter withdraw amount:"))
+                print("*"*50)
+                if withdraw > balance:
+                    print("Insufficient Amount you enter---Try again later")
+                    sys.exit()
+                if withdraw<=0:
+                    print("Do not enter zero for withdraw--Try again later")
+                else:
+                    newbalance1 = balance-withdraw
+                    print("Your account is debited with INR {}".format(withdraw))
+                    print("Your current balance {}".format(newbalance1))
+        except (ValueError,ZeroDivisionError):
+                print("Do not enter special symbols,alphanumerics")
+                print("Do not enter zero for withdraw")
+    case 3:
+        try:
+            if name == "AR":
+                balance = int(5000)
+                print("Your account balance is {}".format(balance))
+                newbalance = int(input("Enter your deposited balance:"))
+                print("*" * 50)
+                if newbalance <= 0:
+                    print("Do not enter zero for Deposition--Try again later")
+                else:
+                    newbalance1 = balance + newbalance
+                    print("Your account is credited with INR {}".format(newbalance))
+                    print("Your updated balance is {}".format(newbalance1))
+            if name == "BR":
+                balance = int(10000)
+                print("Your account balance is {}".format(balance))
+                newbalance = int(input("Enter your deposited balance:"))
+                print("*" * 50)
+                if newbalance <= 0:
+                    print("Do not enter zero for Deposition--Try again later")
+                else:
+                    newbalance1 = balance + newbalance
+                    print("Your account is credited with INR {}".format(newbalance))
+                    print("Your updated balance is {}".format(newbalance1))
+            if name == "CR":
+                balance = int(100000)
+                print("Your account balance is {}".format(balance))
+                newbalance = int(input("Enter your deposited balance:"))
+                print("*" * 50)
+                if newbalance <= 0:
+                    print("Do not enter zero for Deposition--Try again later")
+                else:
+                    newbalance1 = balance + newbalance
+                    print("Your account is credited with INR {}".format(newbalance))
+                    print("Your updated balance is {}".format(newbalance1))
+            if name == "DR":
+                balance = int(20000)
+                print("Your account balance is {}".format(balance))
+                newbalance = int(input("Enter your deposited balance:"))
+                print("*" * 50)
+                if newbalance <= 0:
+                    print("Do not enter zero for Deposition--Try again later")
+                else:
+                    newbalance1 = balance + newbalance
+                    print("Your account is credited with INR {}".format(newbalance))
+                    print("Your updated balance is {}".format(newbalance1))
+        except (ValueError, ZeroDivisionError):
+            print("Do not enter special symbols,alphanumerics")
+            print("Do not enter zero for depositing")
